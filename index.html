@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limina | Securing the AI Economy</title>
+    <style>
+        :root {
+            --bg-color: #0f1218; /* High-end Gunmetal - more depth than pure black */
+            --accent-cyan: #00f2ff;
+            --text-main: #ffffff;
+            --text-dim: #94a3b8;
+        }
+
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Sovereign Spine - Enhanced Stroke and Opacity */
+        .spine-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            opacity: 0.35; 
+            background: 
+                linear-gradient(90deg, transparent 49%, var(--accent-cyan) 50%, transparent 51%),
+                linear-gradient(0deg, transparent 49%, var(--accent-cyan) 50%, transparent 51%);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(circle at center, black 10%, transparent 90%);
+        }
+
+        .container { text-align: center; max-width: 800px; padding: 2rem; z-index: 1; }
+
+        .logo-area {
+            width: 100%; max-width: 320px; margin: 0 auto 3rem;
+            /* MAGIC FILTER: Inverts black to white, then rotates color back to Cyan */
+            filter: invert(1) hue-rotate(180deg) brightness(1.1);
+        }
+
+        h1 {
+            font-size: 3.2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem;
+            background: linear-gradient(to bottom, #fff 50%, #64748b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        h2 { font-size: 1rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.3em; margin-bottom: 1.5rem; text-transform: uppercase; }
+
+        p.body-text { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 3.5rem; line-height: 1.6; }
+
+        /* Form Styling */
+        .email-form-container { max-width: 480px; margin: 0 auto; min-height: 80px; }
+        
+        .email-form {
+            display: flex; gap: 10px; background: rgba(255,255,255,0.05);
+            padding: 8px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .email-form:focus-within { border-color: var(--accent-cyan); box-shadow: 0 0 20px rgba(0, 242, 255, 0.15); }
+
+        input { background: transparent; border: none; color: white; padding: 12px; flex-grow: 1; outline: none; font-size: 1rem; }
+
+        button {
+            background: var(--accent-cyan); color: #000; border: none;
+            padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover { transform: scale(1.02); }
+
+        /* Success Message Overlay */
+        #success-message {
+            display: none; color: var(--accent-cyan); font-weight: 600;
+            padding: 20px; border-radius: 12px; background: rgba(0, 242, 255, 0.05);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+        }
+
+        .pedigree { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: var(--text-dim); text-transform: uppercase; margin-top: 4rem; opacity: 0.7; }
+
+        footer { position: absolute; bottom: 2rem; width: 100%; text-align: center; font-size: 0.8rem; color: var(--text-dim); }
+
+        @keyframes drift { from { transform: translate(0,0); } to { transform: translate(-20px, -20px); } }
+        .spine-bg { animation: drift 30s linear infinite alternate; }
+    </style>
+</head>
+<body>
+    <div class="spine-bg"></div>
+    <div class="container">
+        <div class="logo-area">
+            <img src="LIMINA Logo and Wordart 5 (Tran).png" style="width: 100%;" alt="Limina Logo">
+        </div>
+        
+        <h2>Mira: The Zero-Bypass Protocol</h2>
+        <h1>Securing the Immune System of the AI Economy</h1>
+        <p class="body-text">Unblocking stagnant cloud spend in regulated industries through sub-10ms interdiction and cryptographically signed audit trails.</p>
+
+        <div class="email-form-container">
+            <form id="limina-form" action="https://formspree.io/f/mvzdadoa" method="POST" class="email-form">
+                <input type="email" name="email" placeholder="Enter professional email..." required>
+                <button type="submit" id="submit-btn">Join the Strike Team</button>
+            </form>
+            <div id="success-message">Thanks for your interest. We'll get back to you.</div>
+        </div>
+        
+        <div class="pedigree">Built on 25+ Years of Safety-Critical Engineering Experience</div>
+    </div>
+    <footer>Limina Holdings Ltd | Sydney • London • Auckland</footer>
+
+    <script>
+        const form = document.getElementById('limina-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Sending...';
+
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+            } else {
+                alert('Connection error. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Join the Strike Team';
+            }
+        };
+    </script>
+</body>
+</html>
