@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liora AI | Securing the AI Economy</title>
     <style>
-        :root {
+        :root {  
             --bg-color: #0f1218;
             --accent-cyan: #00f2ff;
             --text-main: #ffffff;
@@ -36,7 +37,7 @@
             text-align: center; 
             width: 90%; 
             max-width: 850px; 
-            padding: 2rem 1rem; 
+            padding: 2.5rem 1rem 1rem; 
             z-index: 1; 
         }
 
@@ -52,19 +53,6 @@
             text-transform: uppercase;
             margin-bottom: 2.5rem; 
             font-weight: 600;
-        }
-
-        .mira-header {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-
-        .mira-mini-logo {
-            height: 70px;
-            width: auto;
-            /* FIX: This specific filter pulls the dark "mira" text out of the black background */
-            filter: brightness(1.5) contrast(1.2) drop-shadow(0 0 10px rgba(0, 242, 255, 0.2));
         }
 
         .mira-product {
@@ -88,39 +76,54 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        p.body-text { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 1.5rem; line-height: 1.6; max-width: 650px; margin-left: auto; margin-right: auto; }
-
-        .email-form-container { width: 100%; max-width: 480px; margin: 0 auto; min-height: 80px; }
-        
-        .email-form {
-            display: flex; gap: 10px; background: rgba(255,255,255,0.05);
-            padding: 8px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.15);
+        p.body-text { 
+            font-size: 1.2rem; 
+            color: var(--text-dim); 
+            margin-bottom: 2.5rem; 
+            line-height: 1.6; 
+            max-width: 650px; 
+            margin-left: auto; 
+            margin-right: auto; 
         }
 
-        input { background: transparent; border: none; color: white; padding: 12px; flex-grow: 1; outline: none; font-size: 1rem; }
-
-        button {
-            background: var(--accent-cyan); color: #000; border: none;
-            padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer;
+        .status-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            background: rgba(0, 242, 255, 0.03);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(4px);
         }
 
-        #success-message {
-            display: none; color: var(--accent-cyan); font-weight: 600;
-            padding: 20px; border-radius: 12px; background: rgba(0, 242, 255, 0.05);
-            border: 1px solid rgba(0, 242, 255, 0.2);
+        .pedigree { 
+            font-size: 0.7rem; 
+            font-weight: 700; 
+            letter-spacing: 0.2em; 
+            color: var(--text-dim); 
+            text-transform: uppercase; 
+            margin-top: 0.5rem; 
+            opacity: 0.6; 
         }
 
-        .pedigree { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; color: var(--text-dim); text-transform: uppercase; margin-top: 2rem; opacity: 0.6; }
-
-        footer { padding: 2rem 0; text-align: center; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.05em; }
+        footer { 
+            padding: 1rem 0 2rem; 
+            text-align: center; 
+            font-size: 0.7rem; 
+            color: var(--text-dim); 
+            letter-spacing: 0.05em; 
+        }
 
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .limina-logo-area { max-width: 180px; }
-            .mira-mini-logo { height: 55px; }
-            .email-form { flex-direction: column; background: transparent; border: none; padding: 0; }
-            input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; margin-bottom: 10px; }
-            button { width: 100%; padding: 16px; }
+            p.body-text { margin-bottom: 2rem; }
+            .status-badge { margin-bottom: 1rem; }
         }
 
         @keyframes drift { from { transform: translate(0,0); } to { transform: translate(-20px, -20px); } }
@@ -132,7 +135,7 @@
     <div class="container">
         
         <div class="limina-logo-area">
-            <img src="Liora AI Black.png" style="width: 100%;" alt="Limina">
+            <img src="Liora AI Black.png" style="width: 100%;" alt="Liora AI">
         </div>
         <p class="developers-tag">Developers of Mira</p>
         
@@ -141,46 +144,14 @@
         </div>
 
         <h1>Securing the Immune System of the AI Economy</h1>
-        <p class="body-text">Unblocking AI adoption in regulated industries through deterministic, infrastructure-layer enforcement and immutable audit trails.</p>
+        <p class="body-text">Unblocking AI adoption in regulated industries through infrastructure-layer enforcement and immutable audit trails.</p>
 
-        <div class="email-form-container">
-            <form id="limina-form" action="https://formspree.io/f/mvzdadoa" method="POST" class="email-form">
-                <input type="email" name="email" placeholder="Professional email address..." required>
-                <button type="submit" id="submit-btn">Learn more</button>
-            </form>
-            <div id="success-message">Thanks for your interest. We'll get back to you soon.</div>
+        <div class="status-badge">
+            Model-Agnostic AI Governance Infrastructure
         </div>
         
         <div class="pedigree">Built on 25+ Years of Safety-Critical Engineering Experience</div>
     </div>
     <footer>&copy; 2026 Liora Holdings Limited | Sydney &bull; Edinburgh &bull; New Zealand</footer>
-
-    <script>
-        const form = document.getElementById('limina-form');
-        const successMessage = document.getElementById('success-message');
-
-        form.onsubmit = async (e) => {
-            e.preventDefault();
-            const submitBtn = document.getElementById('submit-btn');
-            submitBtn.disabled = true;
-            submitBtn.innerText = 'Sending...';
-
-            const data = new FormData(form);
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            });
-
-            if (response.ok) {
-                form.style.display = 'none';
-                successMessage.style.display = 'block';
-            } else {
-                alert('Connection error. Please try again.');
-                submitBtn.disabled = false;
-                submitBtn.innerText = 'Learn more';
-            }
-        };
-    </script>
 </body>
 </html>
